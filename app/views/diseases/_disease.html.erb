@@ -1,0 +1,18 @@
+<% if disease == @current_disease %>
+<div id="current_disease" class="article">
+<% else %>
+<div class="article">
+<% end %>
+  
+    <div class="disease_title"> <%= disease.name %> </div>
+    
+      Caused by <span><%= disease.cause %></span>
+     , Symptoms are <span><%= disease.symptom %></span>
+      , Treated by <span><%= disease.treatment %></span>
+   
+      <div class="actions">
+        <%= link_to 'Show', disease %>
+        <%= link_to 'Edit', edit_disease_path(disease) , remote: true %>
+        <%= link_to 'Destroy', disease, method: :delete, data: { confirm: 'Are you sure?' } , remote: true %>
+      </div>
+</div>

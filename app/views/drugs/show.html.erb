@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @drug.image.url(:medium) %>
+        <p>
+          <strong>Name:</strong>
+          <%= @drug.name %>
+        </p>
+        <p>
+         <strong>Disease:</strong>
+         <%= (@drug.disease.try(:name) || "NA")%>
+        </p>
+        <p>
+          <strong>Uses:</strong>
+          <%= @drug.uses %>
+        </p>
+
+        <p>
+          <strong>Sideeffects:</strong>
+          <%= @drug.sideeffects %>
+        </p>
+
+        <p>
+          <strong>Precautions:</strong>
+          <%= @drug.precautions %>
+        </p>
+
+        <p>
+          <strong>Interactions:</strong>
+          <%= @drug.interactions %>
+        </p>
+
+        <p>
+          <strong>Overdose:</strong>
+          <%= @drug.overdose %>
+        </p>
+        <%= link_to "Write a Review", new_drug_review_path(@drug) %>
+      </div>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="review_title"><%= @drug.name %></h1>
+        <% if @reviews.blank? %>
+          <h3>No reviews just yet, would you like to add the first!</h3>
+          <%= link_to "Write Review", new_drug_review_path(@drug), class: "btn btn-danger" %>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">              
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to 'Edit', edit_drug_path(@drug) %> |
+<%= link_to 'Back', drugs_path %>

@@ -1,0 +1,15 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Listing Diseases</h1>
+<span class="btn">
+<%= link_to 'New Disease', new_disease_path , remote: true %>
+</span>
+
+<div id="diseases">
+<%= render @diseases %>
+</div>
+<div id="mds-form" style="display:none;"></div>
+
+

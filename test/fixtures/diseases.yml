@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cause: MyString
+  symptom: MyString
+  treatment: MyString
+
+two:
+  name: MyString
+  cause: MyString
+  symptom: MyString
+  treatment: MyString

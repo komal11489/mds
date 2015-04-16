@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  uses: MyText
+  sideeffects: MyText
+  precautions: MyText
+  interactions: MyText
+  overdose: MyText
+
+two:
+  name: MyString
+  uses: MyText
+  sideeffects: MyText
+  precautions: MyText
+  interactions: MyText
+  overdose: MyText
